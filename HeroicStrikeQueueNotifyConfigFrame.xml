@@ -1,0 +1,93 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+ <Script file="HeroicStrikeQueueNotifyConfigFrame.lua"/>
+ <Frame name="HeroicStrikeQueueNotifyConfigFrame">
+	<Scripts>
+		<OnLoad> HeroicStrikeQueueNotifyConfigFrame_Load(self); </OnLoad>
+		<OnShow> HeroicStrikeQueueNotifyConfigFrame_Show(); </OnShow>
+		<OnHide> HeroicStrikeQueueNotifyConfigFrame_Hide(); </OnHide>
+	</Scripts>	
+	
+	<Frames>
+		<CheckButton name="$parent_DisplayIcon" inherits="UICheckButtonTemplate">
+			<Size>
+				<AbsDimension x="32" y="32"/>
+			</Size>
+
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="$parent_Head">
+					<Offset>
+						<AbsDimension x="25" y="-40"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName()):SetText("Display the icon");
+				</OnLoad>
+			</Scripts>
+		</CheckButton>
+
+		<CheckButton name="$parent_PlaySound" inherits="UICheckButtonTemplate">
+			<Size>
+				<AbsDimension x="32" y="32"/>
+			</Size>
+
+			<Anchors>
+				<Anchor point="BOTTOMLEFT" relativeTo="$parent_DisplayIcon">
+					<Offset>
+						<AbsDimension x="0" y="-40"/>
+					</Offset>
+				</Anchor>
+			</Anchors>  
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName()):SetText("Play a sound");
+				</OnLoad>
+			</Scripts>    
+		</CheckButton>
+
+		<Slider name="$parent_OHtime" inherits="OptionsSliderTemplate">
+			<Size>
+				<AbsDimension x="220" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="$parent_Playsound">
+					<Offset><AbsDimension x="0" y="-40"/></Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("Notify time before OH swing");
+					getglobal(this:GetName().."High"):SetText("0.1");
+					getglobal(this:GetName().."Low"):SetText("4");
+					this:SetMinMaxValues(0.1, 4);
+					this:SetValueStep(0.1);
+				</OnLoad>
+			</Scripts>
+		</Slider>
+		
+		<Slider name="$parent_leeway" inherits="OptionsSliderTemplate">
+			<Size>
+				<AbsDimension x="220" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="$parent_OHtime">
+					<Offset><AbsDimension x="0" y="-40"/></Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+					getglobal(this:GetName().."Text"):SetText("Leeway time. No notification X amount of time before a MH swing");
+					getglobal(this:GetName().."High"):SetText("0.1");
+					getglobal(this:GetName().."Low"):SetText("4");
+					this:SetMinMaxValues(0.1, 4);
+					this:SetValueStep(0.1);
+				</OnLoad>
+			</Scripts>
+		</Slider>
+		
+	</Frames>
+ </Frame>
+ </Ui>

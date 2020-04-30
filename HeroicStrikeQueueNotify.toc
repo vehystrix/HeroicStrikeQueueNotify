@@ -1,0 +1,8 @@
+## Interface: 11302
+## Title: HeroicStrikeQueueNotify
+## Notes: Display a notification when to queue and unqueue your heroic strike.
+## Author: LeftHandedGlove
+## Version: 4.1.0
+## DefaultState: enabled
+## SavedVariables: config_var
+HeroicStrikeQueueNotifyConfigFrame.xml
