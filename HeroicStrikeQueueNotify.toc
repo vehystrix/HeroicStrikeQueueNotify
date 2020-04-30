@@ -6,3 +6,4 @@
 ## DefaultState: enabled
 ## SavedVariables: config_var
 HeroicStrikeQueueNotifyConfigFrame.xml
+HeroicStrikeQueueNotify.xml

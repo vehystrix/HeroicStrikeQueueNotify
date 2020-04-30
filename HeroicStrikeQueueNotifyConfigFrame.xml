@@ -24,7 +24,7 @@
 			</Anchors>
 			<Scripts>
 				<OnLoad>
-					getglobal(this:GetName()):SetText("Display the icon");
+					HeroicStrikeQueueNotifyConfigFrame_DisplayIcon:SetText("Display the icon");
 				</OnLoad>
 			</Scripts>
 		</CheckButton>
@@ -43,7 +43,7 @@
 			</Anchors>  
 			<Scripts>
 				<OnLoad>
-					getglobal(this:GetName()):SetText("Play a sound");
+					HeroicStrikeQueueNotifyConfigFrame_PlaySound:SetText("Play a sound");
 				</OnLoad>
 			</Scripts>    
 		</CheckButton>
@@ -59,11 +59,12 @@
 			</Anchors>
 			<Scripts>
 				<OnLoad>
-					getglobal(this:GetName().."Text"):SetText("Notify time before OH swing");
-					getglobal(this:GetName().."High"):SetText("0.1");
-					getglobal(this:GetName().."Low"):SetText("4");
-					this:SetMinMaxValues(0.1, 4);
-					this:SetValueStep(0.1);
+					local slidername = "HeroicStrikeQueueNotifyConfigFrame_OHtime";
+					getglobal(slidername.."Text"):SetText("Notify time before OH swing");
+					getglobal(slidername.."High"):SetText("0.1");
+					getglobal(slidername.."Low"):SetText("4");
+					HeroicStrikeQueueNotifyConfigFrame_OHtime:SetMinMaxValues(0.1, 4);
+					HeroicStrikeQueueNotifyConfigFrame_OHtime:SetValueStep(0.1);
 				</OnLoad>
 			</Scripts>
 		</Slider>
@@ -79,11 +80,12 @@
 			</Anchors>
 			<Scripts>
 				<OnLoad>
-					getglobal(this:GetName().."Text"):SetText("Leeway time. No notification X amount of time before a MH swing");
-					getglobal(this:GetName().."High"):SetText("0.1");
-					getglobal(this:GetName().."Low"):SetText("4");
-					this:SetMinMaxValues(0.1, 4);
-					this:SetValueStep(0.1);
+					local slidername = "HeroicStrikeQueueNotifyConfigFrame_leeway";
+					getglobal(slidername.."Text"):SetText("Leeway time. No notification X amount of time before a MH swing");
+					getglobal(slidername.."High"):SetText("0.1");
+					getglobal(slidername.."Low"):SetText("4");
+					HeroicStrikeQueueNotifyConfigFrame_leeway:SetMinMaxValues(0.1, 4);
+					HeroicStrikeQueueNotifyConfigFrame_leeway:SetValueStep(0.1);
 				</OnLoad>
 			</Scripts>
 		</Slider>
